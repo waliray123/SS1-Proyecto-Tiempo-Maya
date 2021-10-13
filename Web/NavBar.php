@@ -130,18 +130,7 @@ $periodosNav = $conn->query("SELECT nombre FROM tiempomaya.periodo order by orde
               </ul>
             </li>
             <li class="nav-item"><a class="nav-link" href="calculadora.php">Calculadora</a></li>
-            <?php
-            if (isset($_SESSION['usuario'])) {
-              if (isset($_SESSION['admin'])) {
-                echo '<li class="nav-item"><a class="nav-link" href="administracion.php">Administrar</a></li>';
-              }
-              echo '<li class="nav-item"><a class="nav-link" href="perfil/perfil.php">Tu Perfil</a></li>';
-              echo '<li class="nav-item"><a class="nav-link" href="./sesion/cerrarSesion.php">Cerrar Sesion</a></li>';
-            } else {
-              echo '<li class="nav-item"><a class="nav-link" href="./sesion/iniciarSesion.php">Iniciar Sesion</a></li>
-            <li class="nav-item"><a class="nav-link" href="./sesion/registrarSesion.php">Registrarse</a></li>';
-            }
-            ?>
+           
           </ul>
         </div>
       </div>
