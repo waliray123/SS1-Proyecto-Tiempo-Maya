@@ -50,6 +50,10 @@ h1, h2, h3, h4, h5, h6 {
   transition: background 0.5s;
 }
 
+.nav-link{
+  font-size: large;
+}
+
 @media (max-width: 768px) {
   .back-to-top {
     bottom: 15px;
@@ -301,8 +305,8 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   text-transform: uppercase;
-  font-size: 13px;
   outline: none;
+  font-size: larger;
 }
 
 .nav-menu > li {

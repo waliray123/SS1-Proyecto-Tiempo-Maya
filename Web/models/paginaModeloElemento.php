@@ -8,9 +8,9 @@ session_start(); ?>
 $conn = include '../conexion/conexion.php';
 $tabla = $_GET['elemento'];
 $table =strtolower($tabla);
-$datos = $conn->query("SELECT nombre,significado,htmlCodigo FROM tiempomaya." . $table . ";");
+$datos = $conn->query("SELECT nombre,significado,htmlCodigo FROM tiempo_maya." . $table . ";");
 $elementos = $datos;
-$informacion = $conn->query("SELECT htmlCodigo FROM tiempomaya.pagina WHERE nombre='" . $tabla . "';");
+$informacion = $conn->query("SELECT htmlCodigo FROM tiempo_maya.pagina WHERE nombre='" . $tabla . "';");
 
 
 
@@ -39,7 +39,6 @@ $informacion = $conn->query("SELECT htmlCodigo FROM tiempomaya.pagina WHERE nomb
             ?>
             <a href='#informacion' class='btn-get-started'>Informacion</a>
             <a href='#elementos' class='btn-get-started'>Elementos</a>
-            <a href='#portafolio' class='btn-get-started'>Imagenes</a>
         </div>
     </section>
     <section id="information">
@@ -73,35 +72,7 @@ $informacion = $conn->query("SELECT htmlCodigo FROM tiempomaya.pagina WHERE nomb
 
         </div>
     </section>
-<hr>
-    <section id="portafolio">
-        <div class="container wow fadeInUp">
-            <div class="section-header">
-                <h3 class="section-title">Imagenes</h3>
-                <p class="section-description">Galeria de Imagenes - <?php echo $tabla ?></p>
-            </div>
-            <?php
-            $stringPrint = " <div class='row' id='portafolio-wrapper'>";
-            $filtro = str_replace(' ', '', $tabla);
-            $sql="SELECT * FROM tiempomaya.imagen WHERE categoria like '" . $tabla . "%';";
-            $imgs = $conn->query($sql);
-            $stringPrint .= "<div class='col-lg-3 col-md-6 portafolio-item '>";
-            foreach ($imgs as $img) {
-                $stringPrint .= "<a href=\"" . $img['data'] . "\"><img src=\"" . $img['data'] . "\" width=\"150%\" target='_blank'/>";
-                $stringPrint .= "<div class='details'>";
-                $stringPrint .= "<h4>" . $img['descripcion'] . "</h4>";
-                $stringPrint .= "<span>" . $pagina . "</span>";
-                $stringPrint .= "</div>";
-                $stringPrint .= "</a>";
-            }
-            $stringPrint .= "</div>";
-            echo $stringPrint;
 
-            ?>
-
-
-        </div>
-    </section>
 
     <?php include "../blocks/bloquesJs.html" ?>
 

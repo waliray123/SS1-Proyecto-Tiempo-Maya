@@ -1,11 +1,11 @@
 <?php
 
 $conn = include 'conexion/conexion.php';
-$kinesNav = $conn->query("SELECT nombre FROM tiempomaya.kin order by nombre;");
-$uinalesNav = $conn->query("SELECT nombre FROM tiempomaya.uinal order by nombre;");
-$nahualesNav = $conn->query("SELECT nombre FROM tiempomaya.nahual order by nombre;");
-$energiasNav = $conn->query("SELECT nombre FROM tiempomaya.energia order by id;");
-$periodosNav = $conn->query("SELECT nombre FROM tiempomaya.periodo order by orden ;");
+$kinesNav = $conn->query("SELECT nombre FROM tiempo_maya.kin order by nombre;");
+$uinalesNav = $conn->query("SELECT nombre FROM tiempo_maya.uinal order by nombre;");
+$nahualesNav = $conn->query("SELECT nombre FROM tiempo_maya.nahual order by nombre;");
+$energiasNav = $conn->query("SELECT nombre FROM tiempo_maya.energia order by id;");
+$periodosNav = $conn->query("SELECT nombre FROM tiempo_maya.periodo order by orden ;");
 
 ?>
 <?php include "mensaje.php"; ?>
@@ -103,45 +103,9 @@ $periodosNav = $conn->query("SELECT nombre FROM tiempomaya.periodo order by orde
             <li class="nav-item">
               <a class="nav-link" href="models/paginaModelo.php?pagina=Rueda Calendarica">Rueda Calendarica</a>
             </li>
-            <li>
-              <a class="nav-link" href="linea_tiempo/LineaDeTiempo.php">Linea del Tiempo &nbsp;&nbsp;&nbsp;&nbsp; </a>
-              <button type="button" style="opacity: 0; height: 0;" class="nav-link" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Linea del Tiempo
-              </button>
-
-              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <?php if (isset($_SESSION['usuario'])) {
-                  echo " <li class='nav-item'><a class='nav-link' href='linea_tiempo/NuevoAcontecimiento.php'>Agregar Nuevo Acontecimiento</a></li>";
-                } ?>
-                <li>
-                  <button type="button" style="opacity: 0; height: 0;" class="nav-link" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Periodos
-                  </button>
-                  <a class="nav-link" href="#" style="font-size: 13px;">Periodos </a>
-                  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <?php if (is_array($periodosNav) || is_object($periodosNav)) {
-                      foreach ($periodosNav as $periodo) {
-                        echo "<li class='nav-item'><a class='nav-link' href='models/paginaModeloPeriodo.php?periodo=" . $periodo['nombre'] . "'>" . $periodo['nombre'] . "</a></li>";
-                      }
-                    } ?>
-                  </ul>
-                </li>
-
-              </ul>
-            </li>
+            
             <li class="nav-item"><a class="nav-link" href="calculadora.php">Calculadora</a></li>
-            <?php
-            if (isset($_SESSION['usuario'])) {
-              if (isset($_SESSION['admin'])) {
-                echo '<li class="nav-item"><a class="nav-link" href="administracion.php">Administrar</a></li>';
-              }
-              echo '<li class="nav-item"><a class="nav-link" href="perfil/perfil.php">Tu Perfil</a></li>';
-              echo '<li class="nav-item"><a class="nav-link" href="./sesion/cerrarSesion.php">Cerrar Sesion</a></li>';
-            } else {
-              echo '<li class="nav-item"><a class="nav-link" href="./sesion/iniciarSesion.php">Iniciar Sesion</a></li>
-            <li class="nav-item"><a class="nav-link" href="./sesion/registrarSesion.php">Registrarse</a></li>';
-            }
-            ?>
+           
           </ul>
         </div>
       </div>
