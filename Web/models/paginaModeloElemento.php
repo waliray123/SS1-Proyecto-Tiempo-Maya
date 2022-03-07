@@ -69,7 +69,7 @@ $informacion = $conn->query("SELECT htmlCodigo FROM tiempo_maya.pagina WHERE nom
                     $stringPrint.= "<div class=\"col-md-9\">";
                     $stringPrint.= "<h3 id='".$dato['nombre']."'>".$dato['nombre']."</h3>";
                     $stringPrint.= "<h5>Significado</h5> <p>".$dato['significado']."</p>";
-                    $stringPrint.= "<p>".$dato['htmlCodigo']."</p>";
+                    $stringPrint.= "<div class=\"rounded\" style=\"background-color: #f1eee5;\"> <p>".$dato['htmlCodigo']."</p> </div>";
                     $stringPrint.= "</div> <hr>";
                     echo $stringPrint;
                 }?>

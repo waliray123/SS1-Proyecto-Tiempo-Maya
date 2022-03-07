@@ -49,7 +49,6 @@ $cholquij = $nahual." ". strval($energia);
                 if(isset($haab)){
                     $palabraHaab = preg_replace('/[0-9 ]+/', '', $haab);                    
                     $palabraCholquij = preg_replace('/[0-9 ]+/', '', $cholquij);
-                    
                 }
                 ?>
                 <br>
@@ -57,41 +56,50 @@ $cholquij = $nahual." ". strval($energia);
                     <div class="row justify-content-center">
                         <div class="col-md-3">
                             <div class="card mb-3 border-dark text-center " >
-                                <div class="card-header" style="background-color: #cebebc;">
-                                    <h2>Calendario Haab</h2>
+                                <div class="card-header" style="background-color: #cec7a6;">
+                                    <h3>Calendario Haab</h3>
                                 </div>
                                 <div class="card-body" style="background-color: #3f4042;">
-                                    <img width="200" height="200" src="imgs/uinal/<?php echo isset($palabraHaab) ? $palabraHaab : ''; ?>.png">                                            
+                                    <img width="100" height="100" class="rounded" style="background-color: #fcd5ce;" src="imgs/uinal/<?php echo isset($palabraHaab) ? $palabraHaab : ''; ?>.png">                                            
                                     <h4>Fecha</h4>
                                     <h5><?php echo isset($haab) ? $haab : ''; ?></h5>
-                                    <button type="button" class="btn btn-success">Mas Info</button>
+                                    <a type="button" class="btn btn-get-started" href='models/paginaModeloElemento.php?elemento=uinal#<?php echo isset($palabraHaab) ? $palabraHaab : ''; ?>'>Mas Info</a>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-3">
                             <div class="card mb-3 border-dark text-center " >
-                                <div class="card-header" style="background-color: #cebebc;">
-                                    <h2>Calendario Haab</h2>
+                                <div class="card-header" style="background-color: #cec7a6;">
+                                    <h3>Calendario Cholquij</h3>
                                 </div>
                                 <div class="card-body" style="background-color: #3f4042;">
-                                <img width="200" height="200" src="imgs/nahual/<?php echo isset($palabraCholquij) ? $palabraCholquij : ''; ?>.png">
+                                <img width="100" height="100" class="rounded" style="background-color: #fcd5ce;" src="imgs/nahual/<?php echo isset($palabraCholquij) ? $palabraCholquij : ''; ?>.png">
                                     <h4>Fecha</h4>
-                                    <h5><?php echo isset($cholquij) ? $cholquij : ''; ?></h5>
-                                    <button type="button" class="btn btn-success">Mas Info</button>
+                                    <h5><?php echo isset($cholquij) ? $cholquij : ''; ?></h5>                                    
+                                    <a type="button" class="btn btn-get-started" href='models/paginaModeloElemento.php?elemento=nahual#<?php echo isset($palabraCholquij) ? $palabraCholquij : ''; ?>'>Mas Info</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card mb-3 border-dark text-center " >
+                                <div class="card-header" style="background-color: #cec7a6;">
+                                    <h3>Cuenta Larga</h3>
+                                </div>
+                                <div class="card-body" style="background-color: #3f4042;">
+                                <img width="100" height="100" class="rounded" style="background-color: #fcd5ce;" src="img/fondo4.jpg">
+                                    <h4>Fecha</h4>
+                                    <h5><?php echo isset($cuenta_larga) ? $cuenta_larga : ''; ?></h5>
+                                    <a type="button" class="btn btn-get-started">Mas Info</a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <th scope="row">Cuenta Larga</th>
-                                    <td><?php echo isset($cuenta_larga) ? $cuenta_larga : ''; ?></td>
                 </div>
 
             </div>
     </div>
     </section>
     </div>
-
-    <br><br><br><br><br>
     <?php include "blocks/bloquesJs1.html" ?>
 
 </body>
