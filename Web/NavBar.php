@@ -77,7 +77,7 @@ $periodosNav = $conn->query("SELECT nombre FROM tiempo_maya.periodo order by ord
                     <div div style="width: 200px; height: 400px; overflow-y: scroll;">
                       <?php if (is_array($nahualesNav) || is_object($nahualesNav)) {
                         foreach ($nahualesNav as $nahual) {
-                          echo "<li class='nav-item'><a class='nav-link' href='models/paginaModeloElemento.php?elemento=nahual#" . $nahual['nombre'] . "'>" . $nahual['nombre'] . "</a></li>";
+                          echo "<li class='nav-item'><a class='nav-link' href='models/paginaModeloElemento2.php?elemento=nahual#" . $nahual['nombre'] . "'>" . $nahual['nombre'] . "</a></li>";
                         }
                       } ?>
                     </div>

@@ -1,7 +1,7 @@
 --
 -- Base de datos: `tiempomaya`
 --
-DROP DATABASE IF EXISTS `tiempomaya`;
+DROP DATABASE IF EXISTS `tiempo_maya`;
 CREATE DATABASE IF NOT EXISTS `tiempomaya` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci;
 USE `tiempomaya`;
 

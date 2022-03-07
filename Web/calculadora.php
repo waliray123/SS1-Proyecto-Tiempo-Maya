@@ -34,7 +34,7 @@ $cholquij = $nahual." ". strval($energia);
     <div>
         <section id="inicio">
             <div id="inicioContainer" class="inicio-container">
-
+            <br><br><br>
                 <div id='formulario'>
                     <h1>Calculadora</h1>
                     <form action="#" method="GET">
@@ -44,32 +44,46 @@ $cholquij = $nahual." ". strval($energia);
                         </div>
                         <button type="submit" class="btn btn-get-started"><i class="far fa-clock"></i> Calcular</button>
                     </form>
-
-                    <div id="tabla">
-                        <table class="table table-dark table-striped">
-                            <thead>
-                                <tr>
-                                    <th scope="col">Calendario</th>
-                                    <th scope="col" style="width: 60%;">Fecha</th>
-
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th scope="row">Calendario Haab</th>
-                                    <td ><?php echo isset($haab) ? $haab : ''; ?></td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">Calendario Cholquij</th>
-                                    <td><?php echo isset($cholquij) ? $cholquij : ''; ?></td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">Cuenta Larga</th>
-                                    <td><?php echo isset($cuenta_larga) ? $cuenta_larga : ''; ?></td>
-                                </tr>
-                            </tbody>
-                        </table>
+                </div>
+                <?php
+                if(isset($haab)){
+                    $palabraHaab = preg_replace('/[0-9 ]+/', '', $haab);                    
+                    $palabraCholquij = preg_replace('/[0-9 ]+/', '', $cholquij);
+                    
+                }
+                ?>
+                <br>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-md-3">
+                            <div class="card mb-3 border-dark text-center " >
+                                <div class="card-header" style="background-color: #cebebc;">
+                                    <h2>Calendario Haab</h2>
+                                </div>
+                                <div class="card-body" style="background-color: #3f4042;">
+                                    <img width="200" height="200" src="imgs/uinal/<?php echo isset($palabraHaab) ? $palabraHaab : ''; ?>.png">                                            
+                                    <h4>Fecha</h4>
+                                    <h5><?php echo isset($haab) ? $haab : ''; ?></h5>
+                                    <button type="button" class="btn btn-success">Mas Info</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card mb-3 border-dark text-center " >
+                                <div class="card-header" style="background-color: #cebebc;">
+                                    <h2>Calendario Haab</h2>
+                                </div>
+                                <div class="card-body" style="background-color: #3f4042;">
+                                <img width="200" height="200" src="imgs/nahual/<?php echo isset($palabraCholquij) ? $palabraCholquij : ''; ?>.png">
+                                    <h4>Fecha</h4>
+                                    <h5><?php echo isset($cholquij) ? $cholquij : ''; ?></h5>
+                                    <button type="button" class="btn btn-success">Mas Info</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+                    <th scope="row">Cuenta Larga</th>
+                                    <td><?php echo isset($cuenta_larga) ? $cuenta_larga : ''; ?></td>
                 </div>
 
             </div>
@@ -77,7 +91,7 @@ $cholquij = $nahual." ". strval($energia);
     </section>
     </div>
 
-
+    <br><br><br><br><br>
     <?php include "blocks/bloquesJs1.html" ?>
 
 </body>
